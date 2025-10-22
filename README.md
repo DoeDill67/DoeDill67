@@ -1,4 +1,4 @@
-## First ever project frfr
+## First ever project fr
 
 <!--
 **DoeDill67/DoeDill67** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
