@@ -49,6 +49,39 @@ def echo_message(message: Message):
     elif message.text == "хз" and state == 5:
         bot.send_message(message.from_user.id, "Даваааааай давай давай давай ты сможееееешь")
         state = 9
+    elif message.text == "Да" and state == 3:
+        bot.send_message(message.from_user.id, "Справка от психолога есть?")
+        state = 10
+    elif message.text == "Нет" and state == 3:
+        bot.send_message(message.from_user.id, "Люди в халатах едут, не беспокойся")
+        state = 11
+    elif message.text == "хз" and state == 3:
+        bot.send_message(message.from_user.id, "Нууу ладно, но люди в халатах запомнили")
+        state = 12
+    elif message.text == "Да" and state == 10:
+        bot.send_message(message.from_user.id, "Тогда наш слон")
+        state = 13
+    elif message.text == "Нет" and state == 10:
+        bot.send_message(message.from_user.id, "Понял тебя, УАЗ буханка выгодно алабуга")
+        state = 14
+    elif message.text == "хз" and state == 10:
+        bot.send_message(message.from_user.id, "К тебе или ко мне? риторический вопрос")
+        state = 15
+    elif message.text == "Да" and state == 4:
+        bot.send_message(message.from_user.id, "Фига ты философ")
+        state = 16
+    elif message.text == "Нет" and state == 4:
+        bot.send_message(message.from_user.id, "Нарвал получается")
+        state = 17
+    elif message.text == "хз" and state == 4:
+        bot.send_message(message.from_user.id, "я тоже")
+        state = 18
+    else:
+        bot.send_message(message.from_user.id, "Бро только кнопки можно нажимать нет свободы слова")
+
+
+bot.infinity_polling()
+
         
 
 
@@ -68,11 +101,6 @@ def echo_message(message: Message):
 
 
 
-# Handle '/start' and '/help'
-@bot.message_handler(commands=['help', 'start'])
-def send_welcome(message):
-    bot.reply_to(message, """\
-Hi there, I am EchoBot.
-I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
 
 """)
+
